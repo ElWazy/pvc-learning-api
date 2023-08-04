@@ -1,0 +1,22 @@
+services:
+  db:
+    image: mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=pato1324
+      - MARIADB_DATABASE=pvc_learning
+      - MARIADB_USER=master
+      - MARIADB_PASSWORD=pato1324
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/pvc-learning
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_NAME=pvc_learning
+      - DB_USER=root
+      - DB_PASSWORD=pato1324
+      - DB_HOST=db
+    depends_on:
+      - db

@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-)(h9w=3wesrbjd#z*de937#&okbl7*vj_5@v$ov3seiknmada@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -70,7 +70,7 @@ DATABASES = {
         "NAME": os.getenv("DB_NAME", "pvc_learning"),
         "USER": os.getenv("DB_USER", "root"),
         "PASSWORD": os.getenv("DB_PASSWORD", "pato1324"),
-        "HOST": os.getenv("DB_HOST", "172.17.0.2"),
+        "HOST": os.getenv("DB_HOST", "db"),
         "PORT": os.getenv("DB_PORT", "3306"),}
 }
 

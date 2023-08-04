@@ -51,3 +51,20 @@ Corre las migraciones
 ```
 
 A trabajar! :raised_hands:
+
+## Utilizando Docker
+
+Modifica las variables de entorno en el `docker-compose.yml`
+
+Para inicializar un proyecto con bd y docker compose
+
+```bash
+docker compose up
+```
+
+Para hacer una migracion inicial, para crear las tablas...
+En otra terminal ejecuta:
+
+```bash
+docker exec python manage.py migrate
+```
